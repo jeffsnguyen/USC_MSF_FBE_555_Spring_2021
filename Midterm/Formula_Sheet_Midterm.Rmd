@@ -1,0 +1,13 @@
+---
+title: "Formula Sheet - Midterm"
+author: "Jeff Nguyen"
+date: "07/03/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, envir=.GlobalEnv)
+```
+
