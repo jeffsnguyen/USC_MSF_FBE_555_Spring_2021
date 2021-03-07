@@ -3,11 +3,73 @@ title: "Formula Sheet - Midterm"
 author: "Jeff Nguyen"
 date: "07/03/2020"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, envir=.GlobalEnv)
 ```
+
+# Trading  
+
+## Market Orders  
+
+An order that tells your broker to buy or sell a fixed number of shares at the “prevailing” market price.  
+• Desirable because execution is fast and certain.  
+• Dangerous because price is not guaranteed, especially:  
+– in illiquid markets  
+– in periods of “market stress”  
+– for large orders  
+  
+Furthermore, the price at which you buy and sell will be slightly different. These prices are guaranteed only if you are fast and your order is small!  
+
+## Limit Orders  
+
+For when you are seeking a better price.  
+Guarantees price but not quantity.  
+Trade may never occur.  
+Price may not turn out to be very good!  
+
+## Order Book  
+
+**Theoretically**, is a record of all outstanding limit order.  
+All orders are listed from best to worst from the perspective of a potential counterparty.  
+– Orders to buy (that you can sell to) are listed from most to least expensive.  
+– Orders to sell (that you can buy from) are listed from least to most expensive.  
+
+**Realisitcally** is some limit orders at a moment in time
+
+On some trading venues, limit orders can be hidden if desired.  
+• The order book you see is always in the past.  
+• Many limit orders will be cancelled. In some cases they will be cancelled because you want to hit them.  
+
+**Market impact**: For large orders, the price of the first share you trade may be much different from the last.  
+
+## Stop Orders  
+
+A “stop order” is actually a type of market order. A stop order to sell is most common and is called a “stop loss order”.  
+
+• Tells your broker to submit a market order to sell when the bid price 
+drops below a set amount.  
+• Designed to prevent losses from becoming too large.  
+• Since a stop order is a type of market order, price is not guaranteed.  
+• In well-functioning markets,price obtained is usually close to stop price.  
+• In periods of market stress, price can be much lower.  
+
+Stop Loss vs. Limit Sell Orders:  
+• Stop Loss Order: order price is below current price, designed to limit losses  
+• Limit Order: order price is (usually) above current price, designed to capture higher gains.  
+
+## Margin  
+
+“Margin” is collateral. It can consist of cash or securities and it is held with your broker.
+• It is necessary whenever your investment can lose more than 100% of its value:  
+– most derivatives  
+– short selling  
+– Investing with borrowed funds  
+• Margin protects your broker from the possibility of you defaulting.  
+
+Margin Rule:  
+If your equity falls below a cutoff value, then you must either deposit more funds (cash or T-bills) or reduce your positions.  
 
