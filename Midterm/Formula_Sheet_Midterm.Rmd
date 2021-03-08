@@ -3,8 +3,8 @@ title: "Formula Sheet - Midterm"
 author: "Jeff Nguyen"
 date: "07/03/2020"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -16,11 +16,8 @@ knitr::opts_chunk$set(echo = TRUE, envir=.GlobalEnv)
 ## Market Orders  
 
 An order that tells your broker to buy or sell a fixed number of shares at the “prevailing” market price.  
-• Desirable because execution is fast and certain.  
-• Dangerous because price is not guaranteed, especially:  
-– in illiquid markets  
-– in periods of “market stress”  
-– for large orders  
+- Desirable because execution is fast and certain.  
+- Dangerous because price is not guaranteed, especially: in illiquid markets, in periods of “market stress”, for large orders  
   
 Furthermore, the price at which you buy and sell will be slightly different. These prices are guaranteed only if you are fast and your order is small!  
 
@@ -41,8 +38,8 @@ All orders are listed from best to worst from the perspective of a potential cou
 **Realisitcally** is some limit orders at a moment in time
 
 On some trading venues, limit orders can be hidden if desired.  
-• The order book you see is always in the past.  
-• Many limit orders will be cancelled. In some cases they will be cancelled because you want to hit them.  
+- The order book you see is always in the past.  
+- Many limit orders will be cancelled. In some cases they will be cancelled because you want to hit them.  
 
 **Market impact**: For large orders, the price of the first share you trade may be much different from the last.  
 
@@ -50,26 +47,264 @@ On some trading venues, limit orders can be hidden if desired.
 
 A “stop order” is actually a type of market order. A stop order to sell is most common and is called a “stop loss order”.  
 
-• Tells your broker to submit a market order to sell when the bid price 
+- Tells your broker to submit a market order to sell when the bid price 
 drops below a set amount.  
-• Designed to prevent losses from becoming too large.  
-• Since a stop order is a type of market order, price is not guaranteed.  
-• In well-functioning markets,price obtained is usually close to stop price.  
-• In periods of market stress, price can be much lower.  
+- Designed to prevent losses from becoming too large.  
+- Since a stop order is a type of market order, price is not guaranteed.  
+- In well-functioning markets,price obtained is usually close to stop price.  
+- In periods of market stress, price can be much lower.  
 
-Stop Loss vs. Limit Sell Orders:  
-• Stop Loss Order: order price is below current price, designed to limit losses  
-• Limit Order: order price is (usually) above current price, designed to capture higher gains.  
+### Stop Loss vs. Limit Sell Orders:  
+- Stop Loss Order: order price is below current price, designed to limit losses  
+- Limit Order: order price is (usually) above current price, designed to capture higher gains.  
 
 ## Margin  
 
 “Margin” is collateral. It can consist of cash or securities and it is held with your broker.
-• It is necessary whenever your investment can lose more than 100% of its value:  
+It is necessary whenever your investment can lose more than 100% of its value:  
 – most derivatives  
 – short selling  
 – Investing with borrowed funds  
-• Margin protects your broker from the possibility of you defaulting.  
+  
+Margin protects your broker from the possibility of you defaulting.  
 
-Margin Rule:  
+### Margin Rule:  
 If your equity falls below a cutoff value, then you must either deposit more funds (cash or T-bills) or reduce your positions.  
+
+\begin{equation}
+  \begin{aligned}
+    \text{Equity} =& \text{Stock Value} - \text{Amount Borrowed}  \\
+  \end{aligned}
+\end{equation}
+  
+“Maintenance margin” = minimum equity as a % of stock value (usually between 25% and 50%).  
+
+## Short Selling  
+
+Creates additional incentives for information gathering (e.g. fraud detection), promoting market efficiency.  
+
+### Dangers of short selling  
+- Infinite downside.  
+- Subject to margin requirements. Can be forced to “cover.”  
+
+### Short selling costs / availability
+- Short selling is usually cheap (pay 1⁄4% per year to borrow stock).  
+- Occasionally it’s not. (Hertz currently costs 50%.)  
+- Sometimes,all available shares have already been borrowed, making shorting impossible.  
+
+# Funds  
+
+## NAV  
+
+\begin{equation}
+  \begin{aligned}
+    \text{NAV} =& \sum \text{Value of all Assets in the pool}  \\
+               =& \text{Number of shares} * \text{Price per share} + \text{Cash} + \text{Other Assets} - \text{Liabilies}  \\
+  \end{aligned}
+\end{equation}
+  
+Two possible mechanisms for trade:  
+- Trade with other investors in a centralized market.  
+- Trade directly with the fund company.  
+
+## Redemptions  
+
+### Open-end funds (OEF)  
+
+You tell the fund you want out before 4:00pm (usually)
+- At 4:00pm, fund computes NAV per share.
+- Within a week, you receive $\text{Number of shares} * \text{NAV per share}$ minus any redemption fees.  
+
+### Hedge Funds (HF):  
+
+Like open-end funds, but:  
+- May only be allowed monthly or quarterly.  
+- May require substantial advance notice.  
+- May not be allowed at all in the first year or two (the “lock-up” period).  
+
+### Closed-end funds (CEF):  
+- Just like stocks.  
+
+### ETF:  
+- Most ETF trades are on an exchange, where they trade like stocks.  
+- Large trades (>20,000 shares) can be with the fund directly.  
+
+## Mutual Funds:  
+
+### Benefits:  
+
+- Multiple asset - diversification.  
+- Low management fees, as opposed to HFs.  
+- Lower price per shares due to pooling.  
+- The fund does due dillgence.  
+- Lower trading cost.  
+- Bypass capital requirement (for example, compared to HFs).  
+- Lower risk due to diversification.  
+- Also manage tax.  
+- Have regulatory oversight.  
+
+Closed funds and ETFs achieve liquidity via secondary market trading (stock market).  
+
+### Liquidity Issues:  
+
+#### Open-end Funds (OEF):  
+Big issues if the stock is illiquid. When investor redeem, they are own the cash amount on the date of the redemption request regardless of what percentage of the fund the fund needs to liquidate to meet this obligation. Therefore, other investors who did not sell might end up with siginificant less dollar value after redemption. **One investor CAN take away assets from another ivnestors when redeem in an open-ended fund.**  
+
+#### Close-end Funds (CEF):  
+Fund can't be forced to liquidate the shares, it is unaffected at redemption request. Investors must find someone else to take over its stake. **One investor CANNOT take away assets from another ivnestors when redeem in an open-ended fund.**  
+
+For small redemption, when an investor want to redeem, funds write them a cheque using cash buffer without liquidating its assets.   
+
+### Differences:  
+
+#### OEF:  
+- Assets Type: Must hold liquid assets.  
+- Reporting: Must report quarterly.  
+- Fees: Medium fees (some secrecy).  
+- Short Selling: Can short only a little.  
+- Type of investors: Designed for unsophisticated investors.  
+
+#### CEF:  
+- Assets Type: Can hold anything (including illiquid asset such as preferred stocks).  
+- Reporting: Must report quarterly.  
+- Fees: Medium fees (some secrecy).  
+- Short Selling: Can short moderataely.  
+- Tend to offer tax advantage
+
+#### HF:  
+- Assets Type: Can hold somewhat illiquid assets because redemption restriction.  
+- Reporting: Report quarterly for long-only, and not at all if small position.  
+- Fees: High fees (secrecy).  
+- Short Selling: Can do anything (long/short).  
+- Type of Investors: For sophisticated investors.
+
+#### ETF:  
+- Assets Type: Can hold all liquidity.  
+- Reporting: Report daily.  
+- Fees: Low fees (convenient).  
+- Short Selling: Very limited shorting or if derivatives are "plain vanilla".  
+- Type of Investors: Regular unsophisticated investors.  
+
+## ETF Creation and REdemption  
+
+### Creation  
+- Turn to an authorized participant (AP) such as market maker or financial institution who have large buying power to acquire the securities that the ETF wants to hold.  
+- ETF gives AP a block of equally valued ETF shares to hold, called creation unit (usually in 50,000 or 100,000 per block).  
+
+### Redemption:  
+- AP can remove ETF shares by buying enough ETF shares to form creation units and exchange for underlying securities.  
+
+### Arbitrage opportunity:  
+- IF ETF more expensive than sum of underlying NAV, buy underlying and exchange for ETF then sell on open market. Profit is the delta less fees.  
+- If underlying NAV more expensive than ETF, buy ETF on open market to form creation unit and exchange for underlying then sell for porfit. Profit is the delta less fees.  
+
+### Different with CEF:  
+In CEF, no one can create or redeem shares past the initial offering. Consequently, CEFs can trade at massive premium or discount to NAV as there is no arbitrage mechanism to keep price in check.  
+
+# Distribution of Asset Returns  
+
+## Rate of Returns:  
+
+\begin{equation}
+  \begin{aligned}
+    ROR =& \frac{\text{Value at start of period}}{\text{Value at end of period}} - 1  \\
+  \end{aligned}
+\end{equation}
+  
+## Normal Distribution  
+
+- Symmetric around the mean. Unimodal.  
+- Completely described by its mean and variance (or standard deviation).  
+- 95% of data within 2 SDs of the mean.  
+- 99.7% within 3 SDs.  
+- 99.99% within 4 SDs.  
+- 5+ SDs “never” happens.  
+
+- A distribution has “thick tails” when extreme events are more likely than the normal distribution predicts.  
+- “Excess kurtosis” means that both tails are thick.  
+- “Skewness” means that one tail is thicker than the other.  
+- Positive skewness means the right tail is thicker. • Negative skewness means the left tail is thicker.  
+
+# Prediction of Asset Returns  
+
+Stock price changes are serially uncorrelated, so that past movements or trends in a stock price or stock market cannot be used to predict future movements.  
+
+**Simple Bond Pricing**  
+
+\begin{equation}
+  \begin{aligned}
+    P =& \frac{100}{1 + y}  \\
+    \text{where}  \\
+    y =& \text{yield}  \\
+  \end{aligned}
+\end{equation}
+  
+One can predict bond yield by historical average.  
+
+## Dividend Yield vs. Future Stock Returns Regression  
+
+\begin{equation}
+  \begin{aligned}
+    R_{t+1} =& \alpha + \beta \frac{D_t}{P_t} + \epsilon_{t+1}  \\
+  \end{aligned}
+\end{equation}
+  
+**Forecasting future market returns**  
+- Returns tend to be higher when “yields” are higher, both for stocks and bonds.  
+- Earnings yield may work better, possibly because earnings are not directly controlled by firm.  
+- Other non-yield variables also forecast returns (e.g., new orders).  
+- Returns over past few years are likely the opposite of what to expect over the next few years.  
+- Very long-term averages of past returns might be an OK guide to future performance over the very long-term, but that is unclear.  
+
+- Stock and bond prices are not random walks.  
+- Rather, they are mean reverting.  
+- In addition, they can be predicted using yields: For bonds, yield = interest rate. For stocks, yield = D/P or similar.   
+
+# Optimal Portfolio with One Risky Asset  
+
+## Complete Portfolio Returns  
+
+\begin{equation}
+  \begin{aligned}
+    r_c =& r_p y + r_f(1-y)  \\
+    \text{Components}  \\
+    \sigma_c =& \sqrt{\sigma_p^2 y^2}  \\
+    \mu_c =& \mu_p y + r_f (1-y)  \\
+          =& r_f + y(\mu_p - r_f)  \\
+    S_p =& \frac{\mu_p - r_f}{\sigma_p}  \\
+  \end{aligned}
+\end{equation}
+  
+## Utility and Risk Aversion  
+
+*Diminishing marginal utility*: As wealth increases, the marginal utility decreases.  
+
+Utility Concavity motivates aversion to risk.  
+
+\begin{equation}
+  \begin{aligned}
+    U =& E[r] - \frac{1}{2} A Var[r]  \\
+      =& \mu_c - \frac{1}{2} A \sigma_c^2  \\
+      =& r_f + y (\mu_p - r_f) - \frac{1}{2} A \sigma_p^2 y^2  \\
+    \text{Optimal y for given A}  \\
+    y* =& \frac{\mu_p - r_f}{A \sigma_p^2}  \\
+        =& \frac{S_p}{A \sigma_p}  \\
+  \end{aligned}
+\end{equation}
+  
+# Optimal Portfolio with Two Risky Assets  
+  
+Diversification requires holding many assets. Can't just hold equal weights or market-cap weights because there are different volatilities across stocks and complex correlation structure.  
+
+Expected Return is a portfolio weighted average:  
+
+\begin{equation}
+  \begin{aligned}
+    E[r_p] =& w \mu_1 + (1-w) \mu_2  \\
+    Var[r_p] =& 
+  \end{aligned}
+\end{equation}
+
+
+  
 
