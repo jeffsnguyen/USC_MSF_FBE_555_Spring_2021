@@ -328,3 +328,4 @@ The desirable portfolio is the tangent portfolio, regardless of risk aversion. I
 - Riskless asset enables us to find the best portfolio in terms of returns relative to risk, and increase or decrease risk by changing leverage, not by switching to inferior assets.
   
 
+End of file.
