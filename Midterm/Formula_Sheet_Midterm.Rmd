@@ -169,7 +169,8 @@ For small redemption, when an investor want to redeem, funds write them a cheque
 - Reporting: Must report quarterly.  
 - Fees: Medium fees (some secrecy).  
 - Short Selling: Can short moderataely.  
-- Tend to offer tax advantage
+- Tend to offer tax advantage.  
+- Exists largely to shield illiquid assets from redemption.  
 
 #### HF:  
 - Assets Type: Can hold somewhat illiquid assets because redemption restriction.  
@@ -181,7 +182,7 @@ For small redemption, when an investor want to redeem, funds write them a cheque
 #### ETF:  
 - Assets Type: Can hold all liquidity.  
 - Reporting: Report daily.  
-- Fees: Low fees (convenient).  
+- Fees: Low fees (convenient).  Required to maintain transperancy so high fees will be easily replicated and no one will pay that.  
 - Short Selling: Very limited shorting or if derivatives are "plain vanilla".  
 - Type of Investors: Regular unsophisticated investors.  
 
@@ -294,6 +295,8 @@ Utility Concavity motivates aversion to risk.
   
 # Optimal Portfolio with Two Risky Assets  
   
+## Portolio with only Two Risky Assets  
+
 Diversification requires holding many assets. Can't just hold equal weights or market-cap weights because there are different volatilities across stocks and complex correlation structure.  
 
 Expected Return is a portfolio weighted average:  
@@ -301,10 +304,27 @@ Expected Return is a portfolio weighted average:
 \begin{equation}
   \begin{aligned}
     E[r_p] =& w \mu_1 + (1-w) \mu_2  \\
-    Var[r_p] =& 
+    Var[r_p] =& w^2 \sigma_1^2 + (1-w)^2 \sigma_2^2 + 2 \rho w (1-w) \sigma_1 \sigma_2  \\
   \end{aligned}
 \end{equation}
+  
+Backward-looking average returns are not indicative of future expected returns.  
 
+**Note**:  
+- For long-only: if $w, 1-w \geqslant 0$, low correlation between stocks are good.  
+- For long-short: high correlation is good.  
 
+Below the GMV portfolio (100% bond), it's not possible if can't short stock ($A \rightarrow \infty$). Even if possible, it's suboptimal.  
+Above 100% stock not possible if can't short bond ($A \rightarrow 0$). You would hold this if you are indifferent to risks.  
+  
+## Portfolio with Two Risky Assets and One Riskless Assets  
+  
+The desirable portfolio is the tangent portfolio, regardless of risk aversion. If you are more risk-averse, mix more of riskless assets and vice versa.  
+
+**Implications:**  
+- All investors hold the same risky asset portfolio.  
+- The optimal risky portfolio is the one that maximizes the Sharpe Ratio.  
+- Risk aversion $A$ only enters when selecting the mix of risky and riskless assets, so old formula still apply.  
+- Riskless asset enables us to find the best portfolio in terms of returns relative to risk, and increase or decrease risk by changing leverage, not by switching to inferior assets.
   
 
