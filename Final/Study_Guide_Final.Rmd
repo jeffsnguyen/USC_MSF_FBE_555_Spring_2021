@@ -1,0 +1,542 @@
+---
+title: "Study Guide - Final Exam"
+author: "Jeff Nguyen"
+date: "30/04/2021"
+output:
+  pdf_document:
+    extra_dependencies: ["dsfont"]
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, envir=.GlobalEnv)
+```
+
+# Trading  
+
+## Market Orders  
+
+An order that tells your broker to buy or sell a fixed number of shares at the “prevailing” market price.  
+- Desirable because execution is fast and certain.  
+- Dangerous because price is not guaranteed, especially: in illiquid markets, in periods of “market stress”, for large orders  
+  
+Furthermore, the price at which you buy and sell will be slightly different. These prices are guaranteed only if you are fast and your order is small!  
+
+## Limit Orders  
+
+For when you are seeking a better price.  
+Guarantees price but not quantity.  
+Trade may never occur.  
+Price may not turn out to be very good!  
+
+## Order Book  
+
+**Theoretically**, is a record of all outstanding limit order.  
+All orders are listed from best to worst from the perspective of a potential counterparty.  
+– Orders to buy (that you can sell to) are listed from most to least expensive.  
+– Orders to sell (that you can buy from) are listed from least to most expensive.  
+
+**Realisitcally** is some limit orders at a moment in time
+
+On some trading venues, limit orders can be hidden if desired.  
+- The order book you see is always in the past.  
+- Many limit orders will be cancelled. In some cases they will be cancelled because you want to hit them.  
+
+**Market impact**: For large orders, the price of the first share you trade may be much different from the last.  
+
+## Stop Orders  
+
+A “stop order” is actually a type of market order. A stop order to sell is most common and is called a “stop loss order”.  
+
+- Tells your broker to submit a market order to sell when the bid price 
+drops below a set amount.  
+- Designed to prevent losses from becoming too large.  
+- Since a stop order is a type of market order, price is not guaranteed.  
+- In well-functioning markets,price obtained is usually close to stop price.  
+- In periods of market stress, price can be much lower.  
+
+### Stop Loss vs. Limit Sell Orders:  
+- Stop Loss Order: order price is below current price, designed to limit losses  
+- Limit Order: order price is (usually) above current price, designed to capture higher gains.  
+
+## Margin  
+
+“Margin” is collateral. It can consist of cash or securities and it is held with your broker.
+It is necessary whenever your investment can lose more than 100% of its value:  
+– most derivatives  
+– short selling  
+– Investing with borrowed funds  
+  
+Margin protects your broker from the possibility of you defaulting.  
+
+### Margin Rule:  
+If your equity falls below a cutoff value, then you must either deposit more funds (cash or T-bills) or reduce your positions.  
+
+\begin{equation}
+  \begin{aligned}
+    \text{Equity} =& \text{Stock Value} - \text{Amount Borrowed}  \\
+  \end{aligned}
+\end{equation}
+  
+“Maintenance margin” = minimum equity as a % of stock value (usually between 25% and 50%).  
+
+## Short Selling  
+
+Creates additional incentives for information gathering (e.g. fraud detection), promoting market efficiency.  
+
+### Dangers of short selling  
+- Infinite downside.  
+- Subject to margin requirements. Can be forced to “cover.”  
+
+### Short selling costs / availability
+- Short selling is usually cheap (pay 1⁄4% per year to borrow stock).  
+- Occasionally it’s not. (Hertz currently costs 50%.)  
+- Sometimes,all available shares have already been borrowed, making shorting impossible.  
+
+# Funds  
+
+## NAV  
+
+\begin{equation}
+  \begin{aligned}
+    \text{NAV} =& \sum \text{Value of all Assets in the pool}  \\
+               =& \text{Number of shares} * \text{Price per share} + \text{Cash} + \text{Other Assets} - \text{Liabilies}  \\
+  \end{aligned}
+\end{equation}
+  
+Two possible mechanisms for trade:  
+- Trade with other investors in a centralized market.  
+- Trade directly with the fund company.  
+
+## Redemptions  
+
+### Open-end funds (OEF)  
+
+You tell the fund you want out before 4:00pm (usually)
+- At 4:00pm, fund computes NAV per share.
+- Within a week, you receive $\text{Number of shares} * \text{NAV per share}$ minus any redemption fees.  
+
+### Hedge Funds (HF):  
+
+Like open-end funds, but:  
+- May only be allowed monthly or quarterly.  
+- May require substantial advance notice.  
+- May not be allowed at all in the first year or two (the “lock-up” period).  
+
+### Closed-end funds (CEF):  
+- Just like stocks.  
+
+### ETF:  
+- Most ETF trades are on an exchange, where they trade like stocks.  
+- Large trades (>20,000 shares) can be with the fund directly.  
+
+## Mutual Funds:  
+
+### Benefits:  
+
+- Multiple asset - diversification.  
+- Low management fees, as opposed to HFs.  
+- Lower price per shares due to pooling.  
+- The fund does due dillgence.  
+- Lower trading cost.  
+- Bypass capital requirement (for example, compared to HFs).  
+- Lower risk due to diversification.  
+- Also manage tax.  
+- Have regulatory oversight.  
+
+Closed funds and ETFs achieve liquidity via secondary market trading (stock market).  
+
+### Liquidity Issues:  
+
+#### Open-end Funds (OEF):  
+Big issues if the stock is illiquid. When investor redeem, they are own the cash amount on the date of the redemption request regardless of what percentage of the fund the fund needs to liquidate to meet this obligation. Therefore, other investors who did not sell might end up with siginificant less dollar value after redemption. **One investor CAN take away assets from another ivnestors when redeem in an open-ended fund.**  
+
+#### Close-end Funds (CEF):  
+Fund can't be forced to liquidate the shares, it is unaffected at redemption request. Investors must find someone else to take over its stake. **One investor CANNOT take away assets from another ivnestors when redeem in an open-ended fund.**  
+
+For small redemption, when an investor want to redeem, funds write them a cheque using cash buffer without liquidating its assets.   
+
+### Differences:  
+
+#### OEF:  
+- Assets Type: Must hold liquid assets.  
+- Reporting: Must report quarterly.  
+- Fees: Medium fees (some secrecy).  
+- Short Selling: Can short only a little.  
+- Type of investors: Designed for unsophisticated investors.  
+
+#### CEF:  
+- Assets Type: Can hold anything (including illiquid asset such as preferred stocks).  
+- Reporting: Must report quarterly.  
+- Fees: Medium fees (some secrecy).  
+- Short Selling: Can short moderataely.  
+- Tend to offer tax advantage.  
+- Exists largely to shield illiquid assets from redemption.  
+
+#### HF:  
+- Assets Type: Can hold somewhat illiquid assets because redemption restriction.  
+- Reporting: Report quarterly for long-only, and not at all if small position.  
+- Fees: High fees (secrecy).  
+- Short Selling: Can do anything (long/short).  
+- Type of Investors: For sophisticated investors.
+
+#### ETF:  
+- Assets Type: Can hold all liquidity.  
+- Reporting: Report daily.  
+- Fees: Low fees (convenient).  Required to maintain transperancy so high fees will be easily replicated and no one will pay that.  
+- Short Selling: Very limited shorting or if derivatives are "plain vanilla".  
+- Type of Investors: Regular unsophisticated investors.  
+
+## ETF Creation and REdemption  
+
+### Creation  
+- Turn to an authorized participant (AP) such as market maker or financial institution who have large buying power to acquire the securities that the ETF wants to hold.  
+- ETF gives AP a block of equally valued ETF shares to hold, called creation unit (usually in 50,000 or 100,000 per block).  
+
+### Redemption:  
+- AP can remove ETF shares by buying enough ETF shares to form creation units and exchange for underlying securities.  
+
+### Arbitrage opportunity:  
+- IF ETF more expensive than sum of underlying NAV, buy underlying and exchange for ETF then sell on open market. Profit is the delta less fees.  
+- If underlying NAV more expensive than ETF, buy ETF on open market to form creation unit and exchange for underlying then sell for porfit. Profit is the delta less fees.  
+
+### Different with CEF:  
+In CEF, no one can create or redeem shares past the initial offering. Consequently, CEFs can trade at massive premium or discount to NAV as there is no arbitrage mechanism to keep price in check.  
+
+# Distribution of Asset Returns  
+
+## Rate of Returns:  
+
+\begin{equation}
+  \begin{aligned}
+    ROR =& \frac{\text{Value at start of period}}{\text{Value at end of period}} - 1  \\
+  \end{aligned}
+\end{equation}
+  
+## Normal Distribution  
+
+- Symmetric around the mean. Unimodal.  
+- Completely described by its mean and variance (or standard deviation).  
+- 95% of data within 2 SDs of the mean.  
+- 99.7% within 3 SDs.  
+- 99.99% within 4 SDs.  
+- 5+ SDs “never” happens.  
+
+- A distribution has “thick tails” when extreme events are more likely than the normal distribution predicts.  
+- “Excess kurtosis” means that both tails are thick.  
+- “Skewness” means that one tail is thicker than the other.  
+- Positive skewness means the right tail is thicker. • Negative skewness means the left tail is thicker.  
+
+# Prediction of Asset Returns  
+
+Stock price changes are serially uncorrelated, so that past movements or trends in a stock price or stock market cannot be used to predict future movements.  
+
+**Simple Bond Pricing**  
+
+\begin{equation}
+  \begin{aligned}
+    P =& \frac{100}{1 + y}  \\
+    \text{where}  \\
+    y =& \text{yield}  \\
+  \end{aligned}
+\end{equation}
+  
+One can predict bond yield by historical average.  
+
+## Dividend Yield vs. Future Stock Returns Regression  
+
+\begin{equation}
+  \begin{aligned}
+    R_{t+1} =& \alpha + \beta \frac{D_t}{P_t} + \epsilon_{t+1}  \\
+  \end{aligned}
+\end{equation}
+  
+**Forecasting future market returns**  
+- Returns tend to be higher when “yields” are higher, both for stocks and bonds.  
+- Earnings yield may work better, possibly because earnings are not directly controlled by firm.  
+- Other non-yield variables also forecast returns (e.g., new orders).  
+- Returns over past few years are likely the opposite of what to expect over the next few years.  
+- Very long-term averages of past returns might be an OK guide to future performance over the very long-term, but that is unclear.  
+
+- Stock and bond prices are not random walks.  
+- Rather, they are mean reverting.  
+- In addition, they can be predicted using yields: For bonds, yield = interest rate. For stocks, yield = D/P or similar.   
+
+# Optimal Portfolio with One Risky Asset  
+
+## Complete Portfolio Returns  
+
+\begin{equation}
+  \begin{aligned}
+    r_c =& r_p y + r_f(1-y)  \\
+    \text{Components}  \\
+    \sigma_c =& \sqrt{\sigma_p^2 y^2}  \\
+    \mu_c =& \mu_p y + r_f (1-y)  \\
+          =& r_f + y(\mu_p - r_f)  \\
+    S_p =& \frac{\mu_p - r_f}{\sigma_p}  \\
+  \end{aligned}
+\end{equation}
+  
+## Utility and Risk Aversion  
+
+*Diminishing marginal utility*: As wealth increases, the marginal utility decreases.  
+
+Utility Concavity motivates aversion to risk.  
+
+\begin{equation}
+  \begin{split}
+    U =& E[r] - \frac{1}{2} A Var[r]  \\
+      =& \mu_c - \frac{1}{2} A \sigma_c^2  \\
+      =& r_f + y (\mu_p - r_f) - \frac{1}{2} A \sigma_p^2 y^2  \\
+    \text{Optimal y for given A}  \\
+    y* =& \frac{\mu_p - r_f}{A \sigma_p^2}  \\
+        =& \frac{S_p}{A \sigma_p}  \\
+  \end{split}
+\end{equation}
+  
+# Optimal Portfolio with Two Risky Assets  
+  
+## Portolio with only Two Risky Assets  
+
+Diversification requires holding many assets. Can't just hold equal weights or market-cap weights because there are different volatilities across stocks and complex correlation structure.  
+
+Expected Return is a portfolio weighted average:  
+
+\begin{equation}
+  \begin{aligned}
+    E[r_p] =& w \mu_1 + (1-w) \mu_2  \\
+    Var[r_p] =& w^2 \sigma_1^2 + (1-w)^2 \sigma_2^2 + 2 \rho w (1-w) \sigma_1 \sigma_2  \\
+  \end{aligned}
+\end{equation}
+  
+Backward-looking average returns are not indicative of future expected returns.  
+
+**Note**:  
+- For long-only: if $w, 1-w \geqslant 0$, low correlation between stocks are good.  
+- For long-short: high correlation is good.  
+
+Below the GMV portfolio (100% bond), it's not possible if can't short stock ($A \rightarrow \infty$). Even if possible, it's suboptimal.  
+Above 100% stock not possible if can't short bond ($A \rightarrow 0$). You would hold this if you are indifferent to risks.  
+  
+## Portfolio with Two Risky Assets and One Riskless Assets  
+  
+The desirable portfolio is the tangent portfolio, regardless of risk aversion. If you are more risk-averse, mix more of riskless assets and vice versa.  
+
+**Implications:**  
+- All investors hold the same risky asset portfolio.  
+- The optimal risky portfolio is the one that maximizes the Sharpe Ratio.  
+- Risk aversion $A$ only enters when selecting the mix of risky and riskless assets, so old formula still apply.  
+- Riskless asset enables us to find the best portfolio in terms of returns relative to risk, and increase or decrease risk by changing leverage, not by switching to inferior assets.
+  
+# Optimal Portfolio with Multiple Risky Assets  
+  
+Mean-variance analysis is a systematic approach to portfolio selection, can be used for:  
+- Market timing in stocks/ bonds.  
+- Long/ short arbitrage.  
+- Optimal diversification.  
+  
+**Note:**  
+- If you want absolute returns, you're not interested in min-variance.  
+- If you want relative returns--to a benchmark--, you want to work with min-variance. You might be interested in "active returns"  
+- Risk-aversion does not matter when you work with mean-variance.  
+- Global Minimum Variance tells you how to invest based on your given "belief".  
+  
+\begin{equation}
+  \begin{split}
+    Active \ Returns =& Total\  Returns - Benchmark \ Returns \\ 
+  \end{split}
+\end{equation}
+  
+# CAPM  
+
+Assumptions:  
+  
+- The market model is used to establish the relation between a stock and the market.  
+- CAPM is based on supply/demand equlibrium that the market portfolio must be the tangent portfolio.  
+- $\alpha_i = 0$. The reason is $\alpha_i$ is usually noisy so zeroing them out may leads to more accurated estimates of expected returns.  
+
+The market model:  
+  
+\begin{equation}
+  \begin{split}
+    R_i =& \alpha_i + \beta_i R_m + \epsilon_i  \\
+    \text{where}&  \\
+    R_i =& r_i - r_f  \quad \text{or Excess portfolio returns}  \\
+    R_m =& r_m - r_f  \quad \text{or Excess market returns}  \\
+    \alpha_i =& \, \text{returns without risk}  \\
+    \beta_i =& \, \text{source of risk and returns}  \\
+    \epsilon_i =& \, \text{pure noise}  \\
+  \end{split}
+\end{equation}
+
+Taking expectation both sides:
+  
+\begin{equation}
+  \begin{split}
+    \mathds{E}[R_i] =& \alpha_i + \beta_i \mathds{E}[R_m]  \\
+  \end{split}
+\end{equation}
+  
+## The CAPM Equilibrium:  
+  
+CAPM assumes normality, which isn't realistic.  
+  
+- Explaining the equilibrium: Given the supply is all issued equity shares and demand is the tangent portfolio. When supply equals demand, the tangent portfolio and market portfolio is the same. When there's more demand than supply, i.e. more interest in shares, excess demand pushes price higher; higher price causes lower expected returns; lower returns reduces demand.
+
+## Alphas in the CAPM:  
+  
+All alphas in the CAPM are zeros, i.e.:  
+  
+\begin{equation}
+  \begin{split}
+    \mathds{E}[R_i] = \beta_i \mathds{E}[R_m]  \\
+  \end{split}
+\end{equation}
+  
+If they weren't the market portfolio would not be a supply/ demand equilibrium.  
+
+## Value of the CAPM:  
+
+- It is normal for alphas to be estimated with great imprecision.  
+- If we assume $\mathds{E}[R_i] = \alpha_i + \beta_i \mathds{E}[R_m]$, any error in $\alpha_i$ leads to a corresponding error in $\mathds{E}[R_i]$. Thus, if $\alpha_i = 0$, then imposing CAPM is beneficial. If $\alpha_i \neq 0$ then doing so is problematic. Even if $\alpha_i \approx 0$, imposing CAPM is still better than alternatives.  
+  
+# Single Index Model  
+  
+## Estimation Error  
+  
+- $\mu$, $\sigma$, $corr$ must be estimated. Small sample means estimation will be noisy. Mean and variance may vary over longer sample.  
+- Estimation problem increase as more assets added.  
+  
+## Estimation Risks  
+  
+- Garbage in, garbage out $\Rightarrow$ getting inputs right is important.
+- Risk of investing in suboptimal portfolio because characteristics ($\mu$, $\sigma$, $corr$) used to construct portfolio was imprecisely estimated.  
+
+## Rules of thumb  
+  
+- Past means are estimated imprecisely and may even be inversely related to future returns.  
+- Variances are estimated precisely.  
+- Covariances and correlations are usually estimated fairly precisely, but there are many of them.  
+  
+## Ways to reduce estimations risks  
+  
+- Use fewer assets rather than more, i.e. fewer estimates to screw up (especially correlations).  
+- Use more "stable" assets. Lower volatility means higher signal-to-noise ratio, so means are easier to estimate.  
+- Impose portfolio constraints. Extreme positions probably just reflect error, so don't allow them: no shorting, limited weight, $<20\%$ in a single index.  
+- Use a model: Even if the model is incorrect, may provide reasonable approximation of reality.  
+
+## The Single Index Model  
+  
+Recall the market model:  
+  
+\begin{equation}
+  \begin{split}
+    R_i =& \alpha_i + \beta_i R_m + \epsilon_i  \\
+    \text{where}&  \\
+    R_i =& r_i - r_f  \quad \text{or Excess portfolio returns}  \\
+    R_m =& r_m - r_f  \quad \text{or Excess market returns}  \\
+    \alpha_i =& \, \text{returns without risk}  \\
+    \beta_i =& \, \text{source of risk and returns}  \\
+    \epsilon_i =& \, \text{pure noise}  \\
+  \end{split}
+\end{equation}
+  
+**Key assumptions** of the single index model:
+  
+\begin{equation}
+  \begin{split}
+    corr(\epsilon_{it}, \epsilon_{jt}) =& 0 \quad \forall i \neq j  \\
+  \end{split}
+\end{equation}
+  
+For example:
+  
+\begin{equation}
+  \begin{split}
+    R_i =& \alpha_i + \beta_i R_m + \epsilon_i  \\
+    R_j =& \alpha_j + \beta_j R_m + \epsilon_j  \\
+  \end{split}
+\end{equation}
+
+Assumptions:  
+
+- Note that in regression, always assume $corr(R_m, \epsilon_i) = 0$ because by definition, $\epsilon$ cannot be explained by the independent variable $R_m$, and therefore, they are uncorrelated.  
+- $corr(\beta_i R_m, \beta_j R_m) \neq 0$: because when market goes up, stock goes up.  
+- Stock returns have a common/systematic/market component $\beta_i R_m$.  
+- Stock returns have an idiosyncratic/ firm-specific component $\epsilon_i$.  
+- The importance of market and firm-specific risks may vary across firms $\beta_i$ and $Var[\epsilon_i]$.  
+
+## Estimations  
+  
+### Means and Variances  
+  
+\begin{equation}
+  \begin{split}
+    \mathds{E}[R_i] =& \alpha_i + \beta_i \mathds{E}[R_m]  \\
+    Var[R_i] =& \beta_i^2 Var[R_m] + Var[\epsilon_i]  \\
+  \end{split}
+\end{equation}
+  
+### Covariances  
+  
+\begin{equation}
+  \begin{split}
+    Cov[R_i, R_j] =& \beta_i \beta_j Var[R_m]  \\
+  \end{split}
+\end{equation}
+  
+- $Cov[R_i, R_j] = 0$ if either betas is zero.  
+- $Cov[R_i, R_j] > 0$ if both stocks have positive or negative betas.    
+- $Cov[R_i, R_j] < 0$ if only one beta is positive and the other negative.  
+- $Cov[R_i, R_j]$ is bigger when market is more volatile.  
+  
+### Correlations  
+  
+\begin{equation}
+  \begin{split}
+    Corr[R_i, R_j] =& \frac{Cov[R_i, R_j]}{\sigma_{R_i} \sigma_{R_j}}  \\
+  \end{split}
+\end{equation}
+  
+## Diversification in the Single Index Model  
+  
+\begin{equation}
+  \begin{split}
+    R_p =& \alpha_p + \beta_p R_m + \epsilon_p  \\
+  \end{split}
+\end{equation}
+  
+As the portfolio becomes more diversified:  
+- $\alpha_p$ of a good stock picker could be positive but has a tendency to be closer to 0 ("diworsification").  
+- $\beta_p$ has a tendency to be close to 1, but may not be if a different beta is desired.  
+- $\epsilon_p$ converges to 0 because each $\epsilon_i$ is mean zero and they are uncorrelated.  
+- Idiosyncratic risk can be diversified away, systematic cannot.  
+
+## Advantages of Single Index Model  
+  
+- Effect of change of market risk premium on portfolio risk premium can be clearly observed $\mathds{E}[R_i] = \alpha_i + \beta_i \mathds{E}[R_m]$. Similar is also true for variances and correlations.  
+- Simplify correlationn.  
+
+## Disadvantages of Single Index Model  
+  
+- It's not true. In reality, stock covary because of $\beta_{i,j}$ and $corr[\epsilon_{it}, \epsilon_{jt}]$.  
+  
+## 130/30 Strategy  
+  
+401K:  
+
+- Defined contribution: guaranteed input.  
+- Defined benefit: guaranteed output.  
+
+Pension funds have allocations in stocks (largest), bonds, and alts (small). Quant funds invents 130/30 strategy to move to the stock buckets.  
+
+In the 130/30 strategy, the long bias stems from belief in significant equity premium. 30% short is enough to short sell the most overvalued stocks.  
+- Capture positive alpha from undervalued stock and negative alpha from overvalued stocks.  
+- Keep beta close to 1.  
+- Exposed investors to significantly more idiosyncratic risks as below (can be diversified away):  
+\begin{equation}
+  \begin{split}
+    Var[1.3 \epsilon_G - .3 \epsilon_B] =& 1.3^2 Var[\epsilon_G] + (-.3)^2 Var[\epsilon_B]  \\
+  \end{split}
+\end{equation}
+  
