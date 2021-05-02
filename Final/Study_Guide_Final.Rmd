@@ -666,3 +666,55 @@ In the 130/30 strategy, the long bias stems from belief in significant equity pr
   \end{split}
 \end{equation}
   
+# Efficient Market Hypothesis  
+  
+- Price reflects all available information.  
+- Market only responds to new information.  
+- Changes in stock represents "fair returns" plus complete surprises.  
+  
+## Types:  
+  
+Prices respond immediately to new information:  
+  
+- Weak-form EMH: Past prices, volume. $\Rightarrow$ Strategies based on past prices won't work: momentum, reversal, technical analysis (hold stocks only when price >10-mo MA, trade within support and resistance, looks for breakout/breakdown of trend).  
+- Semi-strong EMH: All public information. $\Rightarrow$ Strategies based on all public information including past prices won't work: buy stocks low P/E, accruals, market cap; sell stocks recently missed earnings; buy stocks in the process of being added to the S&P 500.  
+- Strong EMH: public and private information. $\Rightarrow$ Strategies based on all public and private information won't work: buy stocks about to be target of a takeover, buy stocks about to release good earnings. **Strong form is unrealistic.**  
+  
+## Abnormal returns  
+  
+\begin{equation}
+  \begin{split}
+    R_{it} =& \alpha_i + \beta_i R_{mt} + \epsilon_{it}  \\
+    \text{where}&  \\
+    Normal\ Returns =& \alpha_i + \beta_i R_{mt}  \\
+    Abnormal\ Returns =& \epsilon_{it}  \\
+  \end{split}
+\end{equation}
+  
+In an efficient market, unexpected good news should cause positive $\epsilon_{it}$ immediately. Effect is delayed in an inefficient market.  
+  
+## Event Study  
+  
+Event Study is studies of how stock prices respond to an event. In the study, there is an initial jump in returns--consistent with semin-strong EMH, not strong EMH. After the initial jump, returns continues to drift post-event.  
+
+Index-inclusion events: All indices periodically replace some stocks with others. This event is announced in advance of the "reconstitution date" where the change happens. This type of event has largely been arbitraged away by hedge funds.  
+  
+# Behavorial Finance  
+  
+## Expected Utility Theory  
+  
+We prefer to avoid risk but there's a difference between zero risk and some risk vs some risk and a little more risk.  
+  
+**Allais Paradox:** We may assign special value to certainty (T-bills) as opposed to things that lose value with almost zero probability. We may also overvalue bets that pay off with some small probability (lotteries, long-shot).  
+
+**Overconfidence** People are generally overconfident--hold on to beliefs too closely and don't listen to enough evidence. $\Rightarrow$ May underreact when evidence is presented to you. $\Rightarrow$ When reality eventually disproves your belief, underraction corrects.  
+  
+**Gambler Fallacy** Seeing patterns where none exists.  
+  
+**Anchoring** Past beliefs can be another anchor point. $\Rightarrow$ Investors underreact to information because they are overly attached to their prior opinion.  
+  
+**Loss Aversion** People don't like losing. $\Rightarrow$ Will double down to avoid losses. $\Rightarrow$ Losses, when occured, will be large.  
+Refusing to sell stocks that have lost money means:  
+- Taxes be too high as not enough cap losses will be recognized.  
+- Low returns as holding stocks with negative momentum.  
+- Overvalued stocks due to artifical investors' demand.  
