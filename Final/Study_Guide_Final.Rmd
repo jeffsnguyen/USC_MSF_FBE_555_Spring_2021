@@ -400,6 +400,95 @@ If they weren't the market portfolio would not be a supply/ demand equilibrium.
 - It is normal for alphas to be estimated with great imprecision.  
 - If we assume $\mathds{E}[R_i] = \alpha_i + \beta_i \mathds{E}[R_m]$, any error in $\alpha_i$ leads to a corresponding error in $\mathds{E}[R_i]$. Thus, if $\alpha_i = 0$, then imposing CAPM is beneficial. If $\alpha_i \neq 0$ then doing so is problematic. Even if $\alpha_i \approx 0$, imposing CAPM is still better than alternatives.  
   
+## Failure of CAPM  
+  
+- $\beta$ may matter but not as much as it should.    
+- High $\beta$ stocks have higher average returns than low beta stocks.  
+- Load up on low $\beta$ stocks because The empirical SML is flatter theoretical SML.  
+  
+
+## Test to see if CAPM explains average returns on a particular asset  
+  
+Run the regression  
+  
+\begin{equation}
+  \begin{split}
+    R_{it} =& \alpha_i + \beta_i R_{mt} + \epsilon_{it}  \\
+  \end{split}
+\end{equation}
+  
+and see if $\alpha_i$ significantly different from 0. If $\alpha_i >0$ means $\mathds{E}[R_{it} > \beta_i \mathds{E} [R_{mt}]$.  
+
+Recall that CAPM says $\alpha_i =0$.  
+
+## Test to see if CAPM explains average returns in general   
+  
+Use a cross-sectional test (looking at relation between assets). Recall that CAPM predicts:  
+  
+\begin{equation}
+  \begin{split}
+    \mathds{E}[R_i] =& \beta_i \mathds{E} [R_m]  \\
+  \end{split}
+\end{equation}
+  
+Keys:  
+- Stocks with higher $\beta$ should have higher mean returns.  
+- Stock with 0 $\beta$ should have 0 excess returns.  
+- Relation between $\beta$ and $\mathds{E}[R_i]$ should be linear with a slope coefficient of $\mathds{E}[R_m]$.  
+- Nothing other than $\beta$ matters. Nothing affects $\mathds{E}[R_i]$ other than $\beta$.  
+  
+
+# Factors  
+  
+## Size and Value Anomalies  
+  
+- Portfolios formed on the basis of size (total market cap) and value (book-to-market) performs very differently on average.  
+- Fama-French found that returns are positively related to "book-to-market", negatively related to size/ market cap and not related to $\beta$ as all--high $\beta$ stocks tend to be value stocks.  
+
+## Profitability  
+  
+Recall:
+  
+\begin{equation}
+  \begin{split}
+    \frac{P_0}{B_0} =& \sum_{t=1}^{\infty} \frac{\mathds{E} \Big[ \frac{E_t}{B_0} - \frac{\Delta B_t}{B_0} \Big]}{(1+k)^t}  \\
+  \end{split}
+\end{equation}
+  
+- Holding RHS numerator constant, higher profitability (LHS) means lower discount rate $k$.  
+- Holding LHS constant and expected investment ($\frac{\Delta B_t}{B_0}$) constant, higher LHS means higher discount rate $k$.  
+- Holding LHS constant and expected profitability ($\frac{E_t}{B_0}$) constant, higher expected investment ($\frac{\Delta B_t}{B_0}$) means lower disocunt rate $k$.  
+  
+## Accruals  
+  
+Recall:  
+  
+\begin{equation}
+  \begin{split}
+    Earnings\ =& \, Cash\ Earnings \, + \, Accruals  \\
+  \end{split}
+\end{equation}
+  
+- It is easier to manipulate earnings through accruals (channel stuffing). These earnings are more likely to disappear in the future. Irrational investors who don't distinguish between cash earnings and accruals are surprised when that happens, causing price declines.  
+- Accrual anomalies have mostly disappeared from hedge fund trading.  
+
+## Momentum and Reversal  
+  
+- Momentum: Returns are positively related to recent past returns.  
+- Reversal: Returns are negatively related to longer-term past returns.  
+- Momentum is consistent with underraction, and reversal with overreaction.  
+- Reason: Slow diffusion of information with irrational traders: market slow to react initially to fundamentally good news, then overreact and then underreact to correct.  
+- Reversal due to long-run overreaction is consistent with the value effect. Overreaction eventually realized as subsequent earnings aren't as high as anticipated.  
+- CAPM does not explain momentum.  
+- There's no overall market momentum, it's always relative to other markets at the same time $t$.  
+- **Short-term reversal**: When liquidity is low and there is a lot of turnover, then much of the stock returns is the result of market impact. Reversal profit can be enhanced by trying to remove the part of the return that is not the result of market impact (market return, industry return, change in expected earnings).  
+  
+# Fama-French Model  
+
+  
+
+
+  
 # Single Index Model  
   
 ## Estimation Error  
