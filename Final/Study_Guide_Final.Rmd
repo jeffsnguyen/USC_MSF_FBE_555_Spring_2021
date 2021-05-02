@@ -418,7 +418,7 @@ Run the regression
   \end{split}
 \end{equation}
   
-and see if $\alpha_i$ significantly different from 0. If $\alpha_i >0$ means $\mathds{E}[R_{it} > \beta_i \mathds{E} [R_{mt}]$.  
+and see if $\alpha_i$ significantly different from 0. IF so, reject CAPM. If $\alpha_i >0$ means $\mathds{E}[R_{it} > \beta_i \mathds{E} [R_{mt}]$.  
 
 Recall that CAPM says $\alpha_i =0$.  
 
@@ -697,6 +697,12 @@ In an efficient market, unexpected good news should cause positive $\epsilon_{it
   
 Event Study is studies of how stock prices respond to an event. In the study, there is an initial jump in returns--consistent with semin-strong EMH, not strong EMH. After the initial jump, returns continues to drift post-event.  
 
+**Steps:**  
+  
+- Compute abnormal returns $\epsilon = R - \alpha - \beta R_m$ around the event date.  
+- Look at cumulative abnormal returns to see if returns are going up or down before, on and after event date.  
+- Predictably abnormally large returns following a public event indicates inefficiency.  
+  
 Index-inclusion events: All indices periodically replace some stocks with others. This event is announced in advance of the "reconstitution date" where the change happens. This type of event has largely been arbitraged away by hedge funds.  
   
 # Behavorial Finance  
@@ -704,6 +710,8 @@ Index-inclusion events: All indices periodically replace some stocks with others
 ## Expected Utility Theory  
   
 We prefer to avoid risk but there's a difference between zero risk and some risk vs some risk and a little more risk.  
+  
+**Representativeness Heuristics:** We use similarity to judge probability even when this is mathematically incorrect.  
   
 **Allais Paradox:** We may assign special value to certainty (T-bills) as opposed to things that lose value with almost zero probability. We may also overvalue bets that pay off with some small probability (lotteries, long-shot).  
 
