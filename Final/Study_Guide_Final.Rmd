@@ -405,6 +405,7 @@ If they weren't the market portfolio would not be a supply/ demand equilibrium.
 - $\beta$ may matter but not as much as it should.    
 - High $\beta$ stocks have higher average returns than low beta stocks.  
 - Load up on low $\beta$ stocks because The empirical SML is flatter theoretical SML.  
+- CAPM tries to relate returns to $\beta$ and this is largely unspported empirically.  
   
 
 ## Test to see if CAPM explains average returns on a particular asset  
@@ -484,10 +485,46 @@ Recall:
 - **Short-term reversal**: When liquidity is low and there is a lot of turnover, then much of the stock returns is the result of market impact. Reversal profit can be enhanced by trying to remove the part of the return that is not the result of market impact (market return, industry return, change in expected earnings).  
   
 # Fama-French Model  
-
   
+**Theory**  
+  
+- Movements in size-based and value-based portfolios suggest additional sources of systematic risk.  
+- Stocks in the same category moves together. It's not a result of a market-wide movement. It reflects some unknown aggregate risk factors.  
+- If size and value risk are not diversifiable, then they may command additional risk premia.  
+- **Important:** Fama-French does not explain why value outperform growth.  
 
-
+## Original Model  
+  
+\begin{equation}
+  \begin{split}
+    R_{it} =& \alpha_i + \beta_{mi} R_{mt} + \beta_{SMLi} R_{SMBt} + \beta_{HMLi} R_{HMLt} + \epsilon_{it}  \\
+  \end{split}
+\end{equation}
+  
+Here, $\alpha_i = 0$. Thus, equivalently:  
+  
+\begin{equation}
+  \begin{split}
+    \mathds{E}[R_{it}] =& \beta_{mi} \mathds{E}[R_{mt}] + \beta_{SMLi} \mathds{E}[R_{SMBt}] + \beta_{HMLi} \mathds{E}[R_{HMLt}]   \\
+  \end{split}
+\end{equation}
+  
+- Fama-French model does explain small-cap value (positive regressed coefficient).  
+- Fama-French model does not explain small-cap winners vs. losers in terms of momentum.  
+- Two other factors were added: Profitablity (Most Profitable - Least Profitable) and Investment (Least Investing - Most Investing).  
+  
+## Carhart Factor  
+  
+\begin{equation}
+  \begin{split}
+    R_{it} =& \alpha_i + \beta_{mi} R_{mt} + \beta_{SMLi} R_{SMBt} + \beta_{HMLi} R_{HMLt} + \beta_{UMDi} R_{UMDt} + \epsilon_{it}  \\
+    \text{where}&  \\
+    UMD =& \, "Up\ Minus\ Down"  \\
+        =& Returns\ on\ Past\ Winners\ - \, Returns\ on\ Past\ Losers  \\ 
+  \end{split}
+\end{equation}
+  
+The Carhart Factor model does not explain perfectly small cap winners (momentum).  
   
 # Single Index Model  
   
